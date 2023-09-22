@@ -8,6 +8,7 @@ export default {
         'secondary-color': '#AFA2C3',
         'font-colors': '#3E334E',
         'thirdy-color': '#AEAFF7',
+        'white-colors': '#fff',
       },
       accentColor: {
         'main-accent': '#7879F1',
