@@ -10,10 +10,10 @@ export default function Login() {
   } = useLogin();
 
   return (
-    <section className="flex items-center justify-center overflow-hidden xl:h-full xl:w-full">
-      <div className="flex flex-col gap-4">
+    <section className="flex justify-center overflow-hidden xl:h-full xl:w-full">
+      <div className="flex flex-col gap-4 bg-slate-50 max-h-[800px]">
         {state?.error && <span className="pl-4 text-red-600 border-l-4 border-red-600 py-2.5 capitalize bg-red-50">{state?.error}</span>}
-        <div className="bg-slate-50 shadow-lg text-font-colors xl:w-[700px] p-10 rounded-lg">
+        <div className="text-font-colors xl:w-[700px] p-10 rounded-lg">
           <div className="flex flex-col text-center gap-y-20 xl:mt-5">
             <div className="flex justify-center px-12 py-10 ">
               <img src={Logo} alt="FiQost Living" />
@@ -80,8 +80,8 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className="xl:max-h-screen">
-        <img src={bg} alt="" />
+      <div className="max-h-[800px]">
+        <img src={bg} alt="Background Auth" />
       </div>
     </section>
   );
