@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'main-color': '#7879F1',
+        'main-color': '#327ACE',
         'secondary-color': '#AFA2C3',
-        'font-colors': '#3E334E',
-        'thirdy-color': '#AEAFF7',
+        'font-colors': '#111827',
+        'thirdy-color': '#DBEAFE',
         'white-colors': '#fff',
       },
       accentColor: {

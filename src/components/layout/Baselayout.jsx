@@ -19,7 +19,7 @@ export default function BaseLayout({ children }) {
         )
       }
 
-      <div className="absolute left-0 flex justify-center w-full top-14">
+      <div className="absolute left-0 flex justify-center w-full">
         {children}
       </div>
     </div>
