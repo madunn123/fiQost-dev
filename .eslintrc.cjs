@@ -22,6 +22,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'linebreak-style': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
     'react/prop-types': 'off',
     'import/no-extraneous-dependencies': ['error',
       {

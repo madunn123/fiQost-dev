@@ -14,8 +14,8 @@ export default function Login() {
       <div className="flex flex-col gap-4">
         {state?.error && <span className="pl-4 text-red-600 border-l-4 border-red-600 py-2.5 capitalize bg-red-50">{state?.error}</span>}
         <div className="bg-slate-50 shadow-lg text-font-colors xl:w-[700px] p-10 rounded-lg">
-          <div className="flex flex-col gap-y-20 xl:mt-5 text-center">
-            <div className=" py-10 px-12 flex justify-center">
+          <div className="flex flex-col text-center gap-y-20 xl:mt-5">
+            <div className="flex justify-center px-12 py-10 ">
               <img src={Logo} alt="FiQost Living" />
             </div>
 
@@ -31,18 +31,22 @@ export default function Login() {
 
               <form className="flex flex-col gap-5" onSubmit={onSubmit}>
                 <div className="flex flex-col gap-4">
-                  <label htmlFor="">Username</label>
+                  <label htmlFor="username">
+                    Username
+                  </label>
                   <input
                     type="text"
+                    id="username"
                     className="p-3 text-sm font-medium duration-300 border rounded-md outline-none placeholder:text-slate-400 placeholder:capitalize focus:outline-main-color focus:outline-1 border-slate-300 placeholder:font-medium"
                     placeholder="username"
                     {...register('username')}
                   />
 
-                  <label htmlFor="">Kata Sandi</label>
+                  <label htmlFor="password">Kata Sandi</label>
                   <div className="relative">
                     <input
                       type="password"
+                      id="password"
                       className="w-full p-3 text-sm font-medium duration-300 border rounded-md outline-none placeholder:text-slate-400 placeholder:capitalize focus:outline-main-color focus:outline-1 border-slate-300 placeholder:font-medium"
                       placeholder="password"
                       {...register('password')}
