@@ -8,3 +8,8 @@ body {
     background: #EFF6FF;
     font-family: 'Montserrat', sans-serif;
 }
+
+label{
+    @apply
+    text-black text-base font-normal text-left
+}
