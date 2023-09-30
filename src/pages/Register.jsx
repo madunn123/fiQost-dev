@@ -11,7 +11,7 @@ export default function Register() {
   } = useRegister();
 
   return (
-    <section className="flex justify-center overflow-hidden xl:h-full xl:w-full">
+    <section className="overflow-hidden xl:h-full xl:w-full grid grid-cols-2">
       <div className="flex flex-col gap-4 bg-slate-50 max-h-[800px]">
         {state?.error && <span className="pl-4 text-red-600 border-l-4 border-red-600 py-2.5 capitalize bg-red-50">{state?.error}</span>}
         <div className="text-font-colors xl:w-[700px] px-10 py-5 rounded-lg">
