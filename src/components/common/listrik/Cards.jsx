@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineArrowDown } from 'react-icons/ai';
-import { BsFillDropletFill } from 'react-icons/bs';
+import { BsFillLightningChargeFill } from 'react-icons/bs';
 import Constant from '@/utils/constant';
 
 export default function Cards({ kwh }) {
@@ -10,7 +10,7 @@ export default function Cards({ kwh }) {
   return (
     <div className="relative w-full p-4 text-white rounded-lg xl:h-[180px] bg-main-color">
       <div className="flex flex-col gap-2 xl:mt-4">
-        <h1 className="m-0 font-bold capitalize text-xl text-slate-50">Penggunaan Air Kamu</h1>
+        <h1 className="m-0 font-bold capitalize text-xl text-slate-50">Penggunaan Listrik Kamu</h1>
         <span className="capitalize flex flex-row gap-2 items-center">
           <AiOutlineCalendar />
           <div>
@@ -25,8 +25,8 @@ export default function Cards({ kwh }) {
           </div>
         </span>
         <span className="capitalize flex flex-row gap-2 items-center">
-          <BsFillDropletFill />
-          PDAM
+          <BsFillLightningChargeFill />
+          Pasca Bayar
         </span>
       </div>
 

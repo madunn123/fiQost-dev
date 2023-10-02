@@ -1,6 +1,6 @@
 import React from 'react';
 import useFilter from '@/hooks/useFilter';
-import Headline from '@/components/common/air/Headline';
+import Headline from '@/components/common/Headline';
 import Filter from '@/components/dashboard/Filter';
 import SummaryAir from '@/components/common/air/SummaryAir';
 import BarChart from '@/components/common/air/BarChart';
