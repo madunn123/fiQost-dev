@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import * as Progress from '@radix-ui/react-progress';
 
 export default function Progressbar({ val }) {
-  const [progress, setProgress] = useState(val);
+  const progressValue = val;
+  const [progress, setProgress] = useState(progressValue);
 
   useEffect(() => {
-    const timer = setTimeout(() => setProgress(val <= 20 ? 70 : 20), 500);
+    const timer = setTimeout(() => setProgress(progress), 500);
     return () => clearTimeout(timer);
   }, []);
 

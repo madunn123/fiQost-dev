@@ -46,7 +46,11 @@ export default function Constant() {
 
   const routersPage = [
     { path: '/dashboard', name: 'Dasbor Saya', icons: <LuLayoutDashboard /> },
-    { name: 'Fasilitas', icons: <BsBuildingsFill />, subMenu: [{ path: '/air', name: 'air' }, { path: '/listrik', name: 'listrik' }, { path: '/wifi', name: 'wifi' }] },
+    {
+      name: 'Fasilitas',
+      icons: <BsBuildingsFill />,
+      subMenu: [{ path: '/air', name: 'air' }, { path: '/listrik', name: 'listrik' }, { path: '/wifi', name: 'wifi' }],
+    },
     { path: '/pembayaran', name: 'Tagihan', icons: <FiCreditCard /> },
     { path: '/keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },
     { path: '/pusat-bantuan', name: 'Bantuan', icons: <BiHelpCircle /> },

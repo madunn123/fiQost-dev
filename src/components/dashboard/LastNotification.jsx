@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import Constant from '@/utils/constant';
 import { Link } from 'react-router-dom';
+import Constant from '@/utils/constant';
 
 export default function LastNotification() {
   const datenow = new Date();

@@ -19,9 +19,9 @@ export default function Sidebar() {
           {routersPage?.map((routers) => {
             if (routers?.name === 'Fasilitas') {
               return (
-                <div className={`px-3 ${location.pathname === '/air' || location.pathname === '/listrik' || location.pathname === '/wifi' ? 'bg-red-600' : ''}`} key={routers.name}>
+                <div className={`px-3 ${location.pathname === '/air' || location.pathname === '/listrik' || location.pathname === '/wifi' ? 'bg-thirdy-color py-2 border-l-8 border-main-color rounded-lg text-main-color' : ''}`} key={routers.name}>
                   <button type="button" className="w-full" to={routers?.path} onClick={() => setOpenedDropdown(!openedDropdown)}>
-                    <li className="flex flex-row items-center justify-between w-full">
+                    <li className={`flex flex-row items-center justify-between w-full ${location.pathname === '/air' || location.pathname === '/listrik' || location.pathname === '/wifi' ? 'font-bold' : 'font-normal'}`}>
                       <div className="flex flex-row items-center gap-4">
                         {routers?.icons}
                         {routers?.name}
@@ -33,7 +33,7 @@ export default function Sidebar() {
                   {openedDropdown && (
                     <ul className="flex flex-col mt-2.5 gap-2.5 pl-8">
                       {routers?.subMenu?.map((submenu) => (
-                        <Link to={submenu?.path} key={submenu?.name}>
+                        <Link to={submenu?.path} key={submenu?.name} className={location.pathname === submenu.path && 'font-bold'}>
                           <li>{submenu?.name}</li>
                         </Link>
                       ))}

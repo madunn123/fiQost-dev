@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Constant from '@/utils/constant';
 import Progressbar from '../common/Progressbar';
 
-export default function ComplaintReport() {
+export default function ComplaintReport({ tab }) {
   const datenow = new Date();
   const { month, days } = Constant();
 
@@ -34,7 +34,9 @@ export default function ComplaintReport() {
               <span className="text-sm">genteng bocor</span>
             </div>
 
-            <Progressbar val={i % 2 === 0 ? 50 : 20} />
+            {tab === 'harian' && <Progressbar val={i % 2 === 0 ? 80 : 20} />}
+            {tab === 'mingguan' && <Progressbar val={i % 2 === 0 ? 20 : 50} />}
+            {tab === 'bulanan' && <Progressbar val={i % 2 === 0 ? 70 : 30} />}
           </div>
         ))
       }
