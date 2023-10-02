@@ -1,14 +1,14 @@
 import React from 'react';
 import { BsBell } from 'react-icons/bs';
-import Avatar from '../../../public/img/ava.png';
 
 export default function Navbar() {
   return (
-    <div className="bg-white w-full px-6 py-8 flex justify-between items-center h-40 border-b border-slate-300">
-      <div className=" flex flex-col gap-2">
-        <h1 className="text-2xl text-black font-bold">Dasbor Kamar Kamu</h1>
-        <h2 className=" text-slate-500 font-semibold text-xl">Halo Budi, Selamat datang ! </h2>
+    <nav className="sticky top-0 flex items-center justify-between w-full h-40 px-6 py-8 bg-white border-b border-slate-300">
+      <div className="flex flex-col gap-2 ">
+        <h1 className="m-0 text-2xl font-bold text-black">Dasbor Kamar Kamu</h1>
+        <h2 className="m-0 text-xl font-semibold text-slate-500">Halo Budi, Selamat datang ! </h2>
       </div>
+
       <div className="flex justify-center gap-3">
         <form>
           <div className="relative">
@@ -22,14 +22,14 @@ export default function Navbar() {
           </div>
         </form>
 
-        <div className="bg-blue-100 p-3 rounded-full">
+        <div className="p-3 bg-blue-100 rounded-full">
           <BsBell />
         </div>
 
         <div>
-          <img src={Avatar} alt="Avatar" className="rounded-full" />
+          <img src="/src/assets/images/ava.png" alt="Avatar" className="rounded-full" />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

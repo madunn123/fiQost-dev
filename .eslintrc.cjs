@@ -21,6 +21,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
+    'react/no-array-index-key': 'off',
     'linebreak-style': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'react/prop-types': 'off',
