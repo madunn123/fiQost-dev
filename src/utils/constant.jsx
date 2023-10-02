@@ -49,7 +49,7 @@ export default function Constant() {
     {
       name: 'Fasilitas',
       icons: <BsBuildingsFill />,
-      subMenu: [{ path: '/air', name: 'air' }, { path: '/listrik', name: 'listrik' }, { path: '/wifi', name: 'wifi' }],
+      subMenu: [{ path: '/air', name: 'Air' }, { path: '/listrik', name: 'Listrik' }, { path: '/wifi', name: 'Wifi' }],
     },
     { path: '/pembayaran', name: 'Tagihan', icons: <FiCreditCard /> },
     { path: '/keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },

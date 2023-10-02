@@ -25,7 +25,7 @@ export default function Progressbar({ val }) {
         />
       </Progress.Root>
 
-      <div className="flex flex-row items-center justify-between text-sm capitalize">
+      <div className="flex flex-row items-center justify-between text-lg capitalize text-black font-medium">
         <span>diterima</span>
         <span>diproses</span>
         <span>selesai</span>
