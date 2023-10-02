@@ -74,13 +74,21 @@ export default function Constant() {
   ];
 
   const days = [
-    'minggu',
-    'senin',
-    'selasa',
-    'rabu',
-    'kamis',
-    'jumat',
-    'sabtu',
+    'Senin',
+    'Selasa',
+    'Rabu',
+    'Kamis',
+    'Jumat',
+    'Sabtu',
+    'Minggu',
+  ];
+
+  const weeks = [
+    'Minggu ke - 1',
+    'Minggu ke - 2',
+    'Minggu ke - 3',
+    'Minggu ke - 4',
+    'Minggu ke - 5',
   ];
 
   return {
@@ -88,5 +96,6 @@ export default function Constant() {
     routersPage,
     month,
     days,
+    weeks,
   };
 }

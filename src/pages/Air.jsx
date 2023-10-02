@@ -2,16 +2,18 @@ import React from 'react';
 import useFilter from '@/hooks/useFilter';
 import Headline from '@/components/common/air/Headline';
 import Filter from '@/components/dashboard/Filter';
-import Summary from '@/components/common/air/SummaryAir';
+import SummaryAir from '@/components/common/air/SummaryAir';
+import BarChart from '@/components/common/air/BarChart';
 
 export default function Air() {
   const { tab, handleFilter } = useFilter();
 
   return (
-    <section>
+    <section className="flex flex-col gap-10">
       <Headline />
       <Filter handleFilter={handleFilter} tab={tab} />
-      <Summary />
+      <SummaryAir tab={tab} />
+      <BarChart tab={tab} />
     </section>
   );
 }

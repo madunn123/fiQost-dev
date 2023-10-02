@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { AiOutlineCalendar, AiOutlineArrowUp } from 'react-icons/ai';
+import { BsFillDropletFill } from 'react-icons/bs';
 import Constant from '@/utils/constant';
 
 export default function Cards({ kwh }) {
@@ -10,7 +10,7 @@ export default function Cards({ kwh }) {
   return (
     <div className="relative w-full p-4 text-white rounded-lg xl:h-[180px] bg-main-color">
       <div className="flex flex-col gap-2 xl:mt-4">
-        <h1 className="m-0 font-bold capitalize">penggunaan listrik kamu</h1>
+        <h1 className="m-0 font-bold capitalize text-xl text-slate-50">Penggunaan Air Kamu</h1>
         <span className="capitalize flex flex-row gap-2 items-center">
           <AiOutlineCalendar />
           <div>
@@ -24,17 +24,20 @@ export default function Cards({ kwh }) {
             {datenow.getFullYear()}
           </div>
         </span>
+        <span className="capitalize flex flex-row gap-2 items-center">
+          <BsFillDropletFill />
+          PDAM
+        </span>
       </div>
 
       <div className="flex flex-row items-center gap-4 xl:mt-4">
         <h1 className="m-0 text-slate-50 font-bold text-xl">{kwh}</h1>
-        <div className="text-[#B45309] text-xs rounded-full p-1 px-3 bg-[#FFFBEB] flex flex-row gap-1 items-center">
+        <div className=" text-green-700 text-xs rounded-full p-1 px-3 bg-green-50 flex flex-row gap-1 items-center">
           <AiOutlineArrowUp />
-          7.2%
+          4.2%
         </div>
       </div>
 
-      <Link to="/view-detail" className="absolute bottom-2.5 right-5">Lihat Selengkapnya</Link>
     </div>
   );
 }
