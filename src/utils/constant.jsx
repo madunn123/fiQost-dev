@@ -6,6 +6,9 @@ import { TbReportAnalytics, TbSettings } from 'react-icons/tb';
 import Dashboard from '@/pages/Dashboard';
 import Register from '@/pages/Register';
 import Login from '@/pages/Login';
+import Air from '@/pages/Air';
+import Wifi from '@/pages/Wifi';
+import Listrik from '@/pages/Listrik';
 
 export default function Constant() {
   const routes = [
@@ -24,20 +27,75 @@ export default function Constant() {
       element: <Dashboard />,
       RequireAuth: true,
     },
+    {
+      path: '/air',
+      element: <Air />,
+      RequireAuth: true,
+    },
+    {
+      path: '/listrik',
+      element: <Listrik />,
+      RequireAuth: true,
+    },
+    {
+      path: '/wifi',
+      element: <Wifi />,
+      RequireAuth: true,
+    },
   ];
 
   const routersPage = [
     { path: '/dashboard', name: 'Dasbor Saya', icons: <LuLayoutDashboard /> },
-    { path: '/fasilitas', name: 'Fasilitas', icons: <BsBuildingsFill className="flip-horizontal" /> },
-    { path: '/keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },
+    {
+      name: 'Fasilitas',
+      icons: <BsBuildingsFill />,
+      subMenu: [{ path: '/air', name: 'Air' }, { path: '/listrik', name: 'Listrik' }, { path: '/wifi', name: 'Wifi' }],
+    },
     { path: '/pembayaran', name: 'Tagihan', icons: <FiCreditCard /> },
+    { path: '/keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },
     { path: '/pusat-bantuan', name: 'Bantuan', icons: <BiHelpCircle /> },
     { path: '/pusat-bantuan', name: 'Pengaturan', icons: <TbSettings /> },
     { path: '/pusat-bantuan', name: 'Logout', icons: <LuLogOut /> },
   ];
 
+  const month = [
+    'Januari',
+    'Februari',
+    'Maret',
+    'April',
+    'Mei',
+    'Juni',
+    'Juli',
+    'Agustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember',
+  ];
+
+  const days = [
+    'Senin',
+    'Selasa',
+    'Rabu',
+    'Kamis',
+    'Jumat',
+    'Sabtu',
+    'Minggu',
+  ];
+
+  const weeks = [
+    'Minggu ke - 1',
+    'Minggu ke - 2',
+    'Minggu ke - 3',
+    'Minggu ke - 4',
+    'Minggu ke - 5',
+  ];
+
   return {
     routes,
     routersPage,
+    month,
+    days,
+    weeks,
   };
 }

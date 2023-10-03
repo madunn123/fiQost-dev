@@ -9,7 +9,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-label{
-    @apply
-    text-black text-base font-normal text-left
+label {
+    @apply text-black text-base font-normal text-left
+}
+
+* {
+    transition: all;
+    transition-duration: 1.5;
 }

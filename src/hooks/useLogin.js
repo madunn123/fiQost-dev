@@ -12,6 +12,8 @@ export default function useLogin() {
   const [visible, setVisible] = useState(false);
   const { formState, register } = useForm({ username: '', password: '' });
 
+  const userWithRoomNumber = users.find((item) => item?.roomNumber);
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -25,7 +27,7 @@ export default function useLogin() {
       const user = users.find((item) => item.username === username);
       if (username !== user?.username || password !== user?.password) throw new Error('Username atau password salah.');
 
-      dispatch({ type: 'AUTH_LOGIN', payload: { username, password } });
+      dispatch({ type: 'AUTH_LOGIN', payload: { username, password, roomNumber: userWithRoomNumber?.roomNumber } });
       navigate('/dashboard');
     } catch (error) {
       dispatch({ type: 'AUTH_ERROR', payload: error.message });

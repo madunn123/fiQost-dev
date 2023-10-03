@@ -1,27 +1,20 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import LeftBar from '../common/LeftBar';
-import RightBar from '../common/RightBar';
+import Sidebar from '../common/Sidebar';
 import Navbar from '../common/Navbar';
 
 export default function BaseLayout({ children }) {
   const location = useLocation();
 
   return (
-    <div className="relative">
-      {
-        location.pathname !== '/' && location.pathname !== '/register' && (
-        <header className="flex flex-row justify-between">
-          <LeftBar />
-          <Navbar />
-          <RightBar />
-        </header>
-        )
-      }
-
-      <div className="absolute left-0 flex justify-center w-full">
-        {children}
-      </div>
-    </div>
+    <section className="relative grid grid-cols-6 gap-0">
+      {location.pathname !== '/' && location.pathname !== '/register' && <Sidebar />}
+      <section className={location.pathname !== '/' && location.pathname !== '/register' ? 'flex flex-col col-span-5 gap-0' : 'col-span-6'}>
+        {location.pathname !== '/' && location.pathname !== '/register' && <Navbar />}
+        <div className={location.pathname !== '/' && location.pathname !== '/register' && 'p-6 bg-white'}>
+          {children}
+        </div>
+      </section>
+    </section>
   );
 }
