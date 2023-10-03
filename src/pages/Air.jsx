@@ -2,8 +2,8 @@ import React from 'react';
 import useFilter from '@/hooks/useFilter';
 import Headline from '@/components/common/Headline';
 import Filter from '@/components/dashboard/Filter';
-import SummaryAir from '@/components/common/air/SummaryAir';
-import BarChart from '@/components/common/air/BarChart';
+import SummaryAir from '@/components/air/SummaryAir';
+import BarChart from '@/components/air/BarChart';
 
 export default function Air() {
   const { tab, handleFilter } = useFilter();

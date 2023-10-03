@@ -2,8 +2,8 @@ import React from 'react';
 import useFilter from '@/hooks/useFilter';
 import Headline from '@/components/common/Headline';
 import Filter from '@/components/dashboard/Filter';
-import SummaryWifi from '@/components/common/wifi/SummaryWifi';
-import BarChart from '@/components/common/wifi/BarChart';
+import SummaryWifi from '@/components/wifi/SummaryWifi';
+import BarChart from '@/components/wifi/BarChart';
 
 export default function Wifi() {
   const { tab, handleFilter } = useFilter();

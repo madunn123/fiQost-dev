@@ -2,8 +2,8 @@ import React from 'react';
 import useFilter from '@/hooks/useFilter';
 import Headline from '@/components/common/Headline';
 import Filter from '@/components/dashboard/Filter';
-import SummaryListrik from '@/components/common/listrik/SummaryListrik';
-import BarChart from '@/components/common/listrik/BarChart';
+import SummaryListrik from '@/components/listrik/SummaryListrik';
+import BarChart from '@/components/listrik/BarChart';
 
 export default function Listrik() {
   const { tab, handleFilter } = useFilter();
