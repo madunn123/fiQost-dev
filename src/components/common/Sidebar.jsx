@@ -12,7 +12,7 @@ export default function Sidebar() {
     <aside className="sticky top-0 left-0 h-screen bg-white border-r-2 xl:max-w-full border-slate-200">
       <div className="relative h-full px-8 py-10 overflow-hidden">
         <div className="absolute left-0 flex justify-center w-full top-16">
-          <img src="/src/assets/images/logo.svg" alt="logo" className="xl:w-56" />
+          <img src="/images/logo.svg" alt="logo" className="xl:w-56" />
         </div>
 
         <ul className="absolute left-0 flex flex-col w-full gap-6 px-8 top-36">

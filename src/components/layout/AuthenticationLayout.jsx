@@ -8,7 +8,7 @@ export default function AuthenticationLayout({
     <section className="grid grid-cols-6 gap-0 p-0 overflow-hidden xl:h-full xl:w-full">
       <div className="relative col-span-2">
         <div className="absolute flex flex-row justify-center w-full xl:top-24">
-          <img src="/src/assets/images/logo.svg" alt="logo-fiqos" className="bg-cover xl:w-80 xl:mx-auto" />
+          <img src="/images/logo.svg" alt="logo-fiqos" className="bg-cover xl:w-80 xl:mx-auto" />
         </div>
 
         <div className="flex items-center justify-center w-full h-full">
@@ -35,7 +35,7 @@ export default function AuthenticationLayout({
       </div>
 
       <div className="col-span-4 container-images">
-        <img src="/src/assets/images/login-image.jpg" className="object-cover object-center w-full h-screen bg-cover" alt="banner" />
+        <img src="/images/login-image.jpg" className="object-cover object-center w-full h-screen bg-cover" alt="banner" />
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export default function Navbar() {
         </div>
 
         <div>
-          <img src="/src/assets/images/ava.png" alt="Avatar" className="rounded-full" />
+          <img src="/images/ava.png" alt="Avatar" className="rounded-full" />
         </div>
       </div>
     </nav>
