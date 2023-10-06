@@ -12,7 +12,7 @@ export default function useLogin() {
   const [visible, setVisible] = useState(false);
   const { formState, register } = useForm({ username: '', password: '' });
 
-  const userWithRoomNumber = users.find((item) => item?.roomNumber);
+  const userWithRoomNumber = users.find((item) => item);
 
   async function handleSubmit(e) {
     e.preventDefault();
