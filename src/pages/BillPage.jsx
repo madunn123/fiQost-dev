@@ -1,11 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getFromLocalStorage } from '@/utils/helper';
 import useFilter from '@/hooks/useFilter';
+import Filter from '@/components/bill/Filter';
+
+const billData = {
+  mingguan: [
+    { fasilitas: 'sewa kamar', penggunaan: '7 hari', biaya: 225000 },
+    { fasilitas: 'air', penggunaan: '14 m3', biaya: 40000 },
+    { fasilitas: 'listrik', penggunaan: '24 kWh', biaya: 25000 },
+    { fasilitas: 'wifi', penggunaan: '12 Gb', biaya: 75000 },
+  ],
+  bulanan: [
+    { fasilitas: 'sewa kamar', penggunaan: '30 hari', biaya: 3000000 },
+    { fasilitas: 'air', penggunaan: '100 m3', biaya: 1000000 },
+    { fasilitas: 'listrik', penggunaan: '200 kWh', biaya: 800000 },
+    { fasilitas: 'wifi', penggunaan: '120 Gb', biaya: 300000 },
+  ],
+};
 
 export default function BillPage() {
   const userWithRoomNumber = getFromLocalStorage('user');
+  const { tab: topTab, handleFilter: handleTopFilter } = useFilter();
+  const [bottomTab, setBottomTab] = useState('mingguan'); // State untuk filter bagian bawah
+  const [selectedItems, setSelectedItems] = useState([]);
 
-  const { tab, handleFilter } = useFilter();
+  useEffect(() => {
+    handleTopFilter('mingguan');
+  }, []);
+
+  const toggleCheckbox = (item) => {
+    setSelectedItems((prev) => (prev.includes(item.fasilitas)
+      ? prev.filter((fasilitas) => fasilitas !== item.fasilitas)
+      : [...prev, item.fasilitas]));
+  };
+
+  const toggleSelectAll = () => {
+    const allFasilitas = billData[topTab]?.map((item) => item.fasilitas) || [];
+    setSelectedItems((prev) => (prev.length === allFasilitas.length ? [] : allFasilitas));
+  };
+
+  const topData = billData[topTab] || [];
+  const bottomData = billData[bottomTab] || topData;
+
+  const totalBiaya = topData.reduce(
+    (total, item) => total + (selectedItems.includes(item.fasilitas) ? item.biaya : 0),
+    0,
+  );
 
   return (
     <section className="flex flex-col gap-6">
@@ -17,52 +57,63 @@ export default function BillPage() {
         </h1>
       </div>
 
-      <div className="flex flex-row items-center justify-end gap-4">
-        <input type="date" className="p-3 ml-2 text-sm rounded-lg bg-thirdy-color" />
-        <div className="flex flex-row items-center gap-0 text-sm inter-font">
-          <button
-            type="button"
-            className={`capitalize border-2 border-r-0 p-3 px-6 rounded-tl-lg rounded-bl-lg ${tab === 'mingguan' || tab === 'harian' ? ' bg-main-color text-white' : ''}`}
-            onClick={() => handleFilter('diterima')}
-          >
-            Mingguan
-          </button>
-          <button
-            type="button"
-            className={`p-3 px-6 capitalize border-2 rounded-tr-lg rounded-br-lg border-slate-200 ${tab === 'bulanan' && 'bg-main-color text-white'}`}
-            onClick={() => handleFilter('selesai')}
-          >
-            Bulanan
-          </button>
-        </div>
-      </div>
+      <Filter tab={topTab} handleFilter={handleTopFilter} />
 
       <table className="text-left border table-auto border-slate-300">
         <thead className="border border-slate-200">
           <tr>
-            <th className="p-4 bg-thirdy-color inter-font text-main-color">Fasilitas</th>
-            <th className="p-4 bg-thirdy-color inter-font text-main-color">Penggunaan</th>
-            <th className="p-4 bg-thirdy-color inter-font text-main-color">Biaya</th>
+            <th className="p-4 bg-thirdy-color inter-font text-main-color">
+              <input
+                type="checkbox"
+                checked={
+                  selectedItems.length === topData.length
+                  && selectedItems.length > 0
+                }
+                onChange={toggleSelectAll}
+                className="p-3 ml-2 text-sm rounded-lg bg-thirdy-color"
+              />
+            </th>
+            <th className="p-4 bg-thirdy-color inter-font text-main-color">
+              Fasilitas
+            </th>
+            <th className="p-4 bg-thirdy-color inter-font text-main-color">
+              Penggunaan
+            </th>
+            <th className="p-4 bg-thirdy-color inter-font text-main-color">
+              Biaya
+            </th>
           </tr>
         </thead>
         <tbody className="capitalize inter-font">
-          <tr>
-            <td className="p-4">sewa kamar</td>
-            <td className="p-4">7 hari</td>
-            <td className="p-4">Rp 225.000</td>
-          </tr>
-          <tr>
-            <td className="p-4">air</td>
-            <td className="p-4">14m3</td>
-            <td className="p-4">Rp 40.000</td>
-          </tr>
-          <tr>
-            <td className="p-4">listrik</td>
-            <td className="p-4">24 kWh</td>
-            <td className="p-4">Rp 25.000</td>
-          </tr>
+          {topData.map((item, index) => (
+            <tr key={index}>
+              <td className="p-4">
+                <input
+                  type="checkbox"
+                  checked={selectedItems.includes(item.fasilitas)}
+                  onChange={() => toggleCheckbox(item)}
+                  className="p-3 ml-2 text-sm rounded-lg bg-thirdy-color"
+                />
+              </td>
+              <td className="p-4">{item.fasilitas}</td>
+              <td className="p-4">{item.penggunaan}</td>
+              <td className="p-4">{`Rp ${item.biaya.toLocaleString()}`}</td>
+            </tr>
+          ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td className="p-4" />
+            <td className="p-4" />
+            <td className="p-4 text-lg font-semibold text-main-color">
+              Jumlah:
+            </td>
+            <td className="p-4 text-lg font-semibold text-main-color">{`Rp ${totalBiaya.toLocaleString()}`}</td>
+          </tr>
+        </tfoot>
       </table>
+
+      <Filter tab={bottomTab} handleFilter={(tab) => setBottomTab(tab)} />
     </section>
   );
 }
