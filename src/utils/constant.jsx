@@ -9,6 +9,8 @@ import Login from '@/pages/Login';
 import Air from '@/pages/Air';
 import Wifi from '@/pages/Wifi';
 import Listrik from '@/pages/Listrik';
+import ComplaintReport from '@/pages/ComplaintReport';
+import BillPage from '@/pages/BillPage';
 
 export default function Constant() {
   const routes = [
@@ -42,6 +44,16 @@ export default function Constant() {
       element: <Wifi />,
       RequireAuth: true,
     },
+    {
+      path: '/laporan-keluhan',
+      element: <ComplaintReport />,
+      RequireAuth: true,
+    },
+    {
+      path: '/pembayaran',
+      element: <BillPage />,
+      RequireAuth: true,
+    },
   ];
 
   const routersPage = [
@@ -51,8 +63,8 @@ export default function Constant() {
       icons: <BsBuildingsFill />,
       subMenu: [{ path: '/air', name: 'Air' }, { path: '/listrik', name: 'Listrik' }, { path: '/wifi', name: 'Wifi' }],
     },
+    { path: '/laporan-keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },
     { path: '/pembayaran', name: 'Tagihan', icons: <FiCreditCard /> },
-    { path: '/keluhan', name: 'Laporan Keluhan', icons: <TbReportAnalytics /> },
     { path: '/pusat-bantuan', name: 'Bantuan', icons: <BiHelpCircle /> },
     { path: '/pusat-bantuan', name: 'Pengaturan', icons: <TbSettings /> },
     { path: '/pusat-bantuan', name: 'Logout', icons: <LuLogOut /> },

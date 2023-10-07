@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,8 +11,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-label {
-    @apply text-black text-base font-normal text-left
+.popins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+.inter-font {
+    font-family: 'Inter', sans-serif;
 }
 
 * {

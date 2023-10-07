@@ -1,14 +1,19 @@
 import React from 'react';
 import { BsBell } from 'react-icons/bs';
+import { useLocation } from 'react-router-dom';
 import { getFromLocalStorage } from '@/utils/helper';
 
-export default function Navbar() {
+export default function Navbar({ names }) {
+  const location = useLocation();
   const userWithRoomNumber = getFromLocalStorage('user');
 
   return (
-    <nav className="sticky top-0 flex items-center justify-between w-full h-40 px-6 py-8 bg-white border-b border-slate-300">
+    <nav className="sticky top-0 z-10 flex items-center justify-between w-full h-40 px-6 py-8 bg-white border-b border-slate-300">
       <div className="flex flex-col gap-2 ">
-        <h1 className="m-0 text-2xl font-bold text-black">Dasbord Kamar Kamu</h1>
+        <h1 className="m-0 text-2xl font-bold text-black">{names}</h1>
+        {
+          location.pathname === '/dashboard'
+        && (
         <h2 className="m-0 text-xl font-semibold text-slate-500">
           Halo
           {' '}
@@ -16,6 +21,8 @@ export default function Navbar() {
           , Selamat datang !
           {' '}
         </h2>
+        )
+      }
       </div>
 
       <div className="flex justify-center gap-3">

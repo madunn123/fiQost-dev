@@ -3,7 +3,7 @@ import { BsFilter } from 'react-icons/bs';
 
 export default function Filter({ tab, handleFilter }) {
   return (
-    <div className="flex flex-row items-center gap-3">
+    <div className="flex flex-row items-center gap-3 inter-font">
       <div className="flex flex-row items-center gap-0 text-sm">
         <button
           type="button"
@@ -29,7 +29,7 @@ export default function Filter({ tab, handleFilter }) {
       </div>
 
       <input type="date" className="p-3 ml-2 text-sm rounded-lg bg-thirdy-color" />
-      <button type="button" className="flex flex-row items-center gap-2 p-3 text-sm rounded-lg bg-thirdy-color">
+      <button type="button" onClick={() => alert('teststes')} className="flex flex-row items-center gap-2 p-3 text-sm rounded-lg inter-font bg-thirdy-color">
         Filter
         {' '}
         <BsFilter />

@@ -12,7 +12,7 @@ export default function ComplaintReport({ tab }) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-row items-center justify-between xl:mb-2">
-        <h1 className="m-0 font-bold text-black text-xl">Status Laporan Keluhan Kamu</h1>
+        <h1 className="m-0 text-xl font-bold text-black popins-font">Status Laporan Keluhan Kamu</h1>
         <button type="button">
           <BsThreeDotsVertical />
         </button>
@@ -22,7 +22,7 @@ export default function ComplaintReport({ tab }) {
         Array.from({ length: 2 })?.map((_, i) => (
           <div className="flex flex-col gap-6 p-3 border-2 rounded-lg border-slate-200" key={i}>
             <div className="flex flex-col gap-2 5">
-              <span className="text-sm flex flex-row gap-2 items-center capitalize">
+              <span className="flex flex-row items-center gap-2 text-sm capitalize">
                 <AiOutlineCalendar />
                 <div>
                   {days[datenow.getDay()]}
@@ -35,7 +35,7 @@ export default function ComplaintReport({ tab }) {
                   {datenow.getFullYear()}
                 </div>
               </span>
-              <span className="text-sm capitalize flex flex-row gap-2">
+              <span className="flex flex-row gap-2 text-sm capitalize inter-font">
                 <BsTools />
                 genteng bocor
               </span>

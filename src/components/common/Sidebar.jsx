@@ -19,9 +19,9 @@ export default function Sidebar() {
           {routersPage?.map((routers) => {
             if (routers?.name === 'Fasilitas') {
               return (
-                <div className={`px-3 ${location.pathname === '/air' || location.pathname === '/listrik' || location.pathname === '/wifi' ? 'bg-thirdy-color py-2 border-l-8 border-main-color rounded-lg text-main-color' : ''}`} key={routers.name}>
+                <div className={`px-3 ${['/air', '/listrik', '/wifi'].includes(location.pathname) ? 'bg-thirdy-color py-2 border-l-8 border-main-color rounded-lg text-main-color' : ''}`} key={routers.name}>
                   <button type="button" className="w-full" to={routers?.path} onClick={() => setOpenedDropdown(!openedDropdown)}>
-                    <li className={`flex flex-row items-center justify-between w-full ${location.pathname === '/air' || location.pathname === '/listrik' || location.pathname === '/wifi' ? 'font-bold' : 'font-normal'}`}>
+                    <li className={`flex flex-row items-center justify-between w-full ${['/air', '/listrik', '/wifi'].includes(location.pathname) ? 'font-bold' : 'font-normal'}`}>
                       <div className="flex flex-row items-center gap-4">
                         {routers?.icons}
                         {routers?.name}
@@ -47,7 +47,7 @@ export default function Sidebar() {
               <Link
                 to={routers?.path}
                 key={routers.name}
-                className={`px-3  ${location.pathname === routers.path && 'border-l-8 py-2 bg-thirdy-color text-main-color font-bold border-main-color rounded-lg'}`}
+                className={`px-3 ${location.pathname === routers.path && 'border-l-8 py-2 bg-thirdy-color text-main-color font-bold border-main-color rounded-lg'}`}
               >
                 <li className="flex flex-row items-center gap-2.5">
                   {routers?.icons}
